@@ -53,7 +53,7 @@ TOOLPREFIX := $(shell if i386-jos-elf-objdump -i 2>&1 | grep '^elf32-i386$$' >/d
 endif
 
 # If the makefile can't find QEMU, specify its path here
-# QEMU = qemu-system-i386
+QEMU = /usr/local/csci301sp2016/qemu-bin/bin/qemu-system-i386
 
 # Try to infer the correct QEMU
 ifndef QEMU
@@ -132,7 +132,7 @@ kernelmemfs: $(MEMFSOBJS) entry.o entryother initcode kernel.ld fs.img
 	$(OBJDUMP) -t kernelmemfs | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > kernelmemfs.sym
 
 tags: $(OBJS) entryother.S _init
-	etags *.S *.c
+	etags *.S *.c *.h
 
 .SECONDARY: vectors.S
 vectors.S: vectors.pl

@@ -1,0 +1,1807 @@
+
+bootasm.S,223
+.code16 9,269
+.globl 10,326
+start:start11,339
+seta20.1:seta20.122,787
+seta20.2:seta20.230,965
+.code32 52,1689
+start32:start3253,1744
+spin:spin74,2559
+.p2align 78,2597
+gdt:gdt79,2664
+gdtdesc:gdtdesc84,2829
+
+entryother.S,139
+.globl 24,886
+start:start25,899
+start32:start3242,1129
+spin:spin73,1810
+.p2align 76,1832
+gdt:gdt77,1843
+gdtdesc:gdtdesc82,1933
+
+entry.S,155
+.p2align 23,586
+.globl 25,603
+multiboot_header:multiboot_header26,627
+.globl 36,908
+_start 37,922
+.globl 40,997
+entry:entry41,1010
+.comm 64,1674
+
+initcode.S,103
+.globl 8,93
+start:start9,106
+exit:exit17,240
+init:init23,325
+.p2align 27,382
+argv:argv28,393
+
+swtch.S,33
+.globl 8,164
+swtch:swtch9,177
+
+trapasm.S,76
+.globl 4,54
+alltraps:alltraps5,70
+.globl 27,434
+trapret:trapret28,449
+
+vectors.S,12104
+.globl 3,51
+.globl 4,67
+vector0:vector05,82
+.globl 9,128
+vector1:vector110,143
+.globl 14,189
+vector2:vector215,204
+.globl 19,250
+vector3:vector320,265
+.globl 24,311
+vector4:vector425,326
+.globl 29,372
+vector5:vector530,387
+.globl 34,433
+vector6:vector635,448
+.globl 39,494
+vector7:vector740,509
+.globl 44,555
+vector8:vector845,570
+.globl 48,605
+vector9:vector949,620
+.globl 53,666
+vector10:vector1054,682
+.globl 57,719
+vector11:vector1158,735
+.globl 61,772
+vector12:vector1262,788
+.globl 65,825
+vector13:vector1366,841
+.globl 69,878
+vector14:vector1470,894
+.globl 73,931
+vector15:vector1574,947
+.globl 78,995
+vector16:vector1679,1011
+.globl 83,1059
+vector17:vector1784,1075
+.globl 87,1112
+vector18:vector1888,1128
+.globl 92,1176
+vector19:vector1993,1192
+.globl 97,1240
+vector20:vector2098,1256
+.globl 102,1304
+vector21:vector21103,1320
+.globl 107,1368
+vector22:vector22108,1384
+.globl 112,1432
+vector23:vector23113,1448
+.globl 117,1496
+vector24:vector24118,1512
+.globl 122,1560
+vector25:vector25123,1576
+.globl 127,1624
+vector26:vector26128,1640
+.globl 132,1688
+vector27:vector27133,1704
+.globl 137,1752
+vector28:vector28138,1768
+.globl 142,1816
+vector29:vector29143,1832
+.globl 147,1880
+vector30:vector30148,1896
+.globl 152,1944
+vector31:vector31153,1960
+.globl 157,2008
+vector32:vector32158,2024
+.globl 162,2072
+vector33:vector33163,2088
+.globl 167,2136
+vector34:vector34168,2152
+.globl 172,2200
+vector35:vector35173,2216
+.globl 177,2264
+vector36:vector36178,2280
+.globl 182,2328
+vector37:vector37183,2344
+.globl 187,2392
+vector38:vector38188,2408
+.globl 192,2456
+vector39:vector39193,2472
+.globl 197,2520
+vector40:vector40198,2536
+.globl 202,2584
+vector41:vector41203,2600
+.globl 207,2648
+vector42:vector42208,2664
+.globl 212,2712
+vector43:vector43213,2728
+.globl 217,2776
+vector44:vector44218,2792
+.globl 222,2840
+vector45:vector45223,2856
+.globl 227,2904
+vector46:vector46228,2920
+.globl 232,2968
+vector47:vector47233,2984
+.globl 237,3032
+vector48:vector48238,3048
+.globl 242,3096
+vector49:vector49243,3112
+.globl 247,3160
+vector50:vector50248,3176
+.globl 252,3224
+vector51:vector51253,3240
+.globl 257,3288
+vector52:vector52258,3304
+.globl 262,3352
+vector53:vector53263,3368
+.globl 267,3416
+vector54:vector54268,3432
+.globl 272,3480
+vector55:vector55273,3496
+.globl 277,3544
+vector56:vector56278,3560
+.globl 282,3608
+vector57:vector57283,3624
+.globl 287,3672
+vector58:vector58288,3688
+.globl 292,3736
+vector59:vector59293,3752
+.globl 297,3800
+vector60:vector60298,3816
+.globl 302,3864
+vector61:vector61303,3880
+.globl 307,3928
+vector62:vector62308,3944
+.globl 312,3992
+vector63:vector63313,4008
+.globl 317,4056
+vector64:vector64318,4072
+.globl 322,4120
+vector65:vector65323,4136
+.globl 327,4184
+vector66:vector66328,4200
+.globl 332,4248
+vector67:vector67333,4264
+.globl 337,4312
+vector68:vector68338,4328
+.globl 342,4376
+vector69:vector69343,4392
+.globl 347,4440
+vector70:vector70348,4456
+.globl 352,4504
+vector71:vector71353,4520
+.globl 357,4568
+vector72:vector72358,4584
+.globl 362,4632
+vector73:vector73363,4648
+.globl 367,4696
+vector74:vector74368,4712
+.globl 372,4760
+vector75:vector75373,4776
+.globl 377,4824
+vector76:vector76378,4840
+.globl 382,4888
+vector77:vector77383,4904
+.globl 387,4952
+vector78:vector78388,4968
+.globl 392,5016
+vector79:vector79393,5032
+.globl 397,5080
+vector80:vector80398,5096
+.globl 402,5144
+vector81:vector81403,5160
+.globl 407,5208
+vector82:vector82408,5224
+.globl 412,5272
+vector83:vector83413,5288
+.globl 417,5336
+vector84:vector84418,5352
+.globl 422,5400
+vector85:vector85423,5416
+.globl 427,5464
+vector86:vector86428,5480
+.globl 432,5528
+vector87:vector87433,5544
+.globl 437,5592
+vector88:vector88438,5608
+.globl 442,5656
+vector89:vector89443,5672
+.globl 447,5720
+vector90:vector90448,5736
+.globl 452,5784
+vector91:vector91453,5800
+.globl 457,5848
+vector92:vector92458,5864
+.globl 462,5912
+vector93:vector93463,5928
+.globl 467,5976
+vector94:vector94468,5992
+.globl 472,6040
+vector95:vector95473,6056
+.globl 477,6104
+vector96:vector96478,6120
+.globl 482,6168
+vector97:vector97483,6184
+.globl 487,6232
+vector98:vector98488,6248
+.globl 492,6296
+vector99:vector99493,6312
+.globl 497,6360
+vector100:vector100498,6377
+.globl 502,6427
+vector101:vector101503,6444
+.globl 507,6494
+vector102:vector102508,6511
+.globl 512,6561
+vector103:vector103513,6578
+.globl 517,6628
+vector104:vector104518,6645
+.globl 522,6695
+vector105:vector105523,6712
+.globl 527,6762
+vector106:vector106528,6779
+.globl 532,6829
+vector107:vector107533,6846
+.globl 537,6896
+vector108:vector108538,6913
+.globl 542,6963
+vector109:vector109543,6980
+.globl 547,7030
+vector110:vector110548,7047
+.globl 552,7097
+vector111:vector111553,7114
+.globl 557,7164
+vector112:vector112558,7181
+.globl 562,7231
+vector113:vector113563,7248
+.globl 567,7298
+vector114:vector114568,7315
+.globl 572,7365
+vector115:vector115573,7382
+.globl 577,7432
+vector116:vector116578,7449
+.globl 582,7499
+vector117:vector117583,7516
+.globl 587,7566
+vector118:vector118588,7583
+.globl 592,7633
+vector119:vector119593,7650
+.globl 597,7700
+vector120:vector120598,7717
+.globl 602,7767
+vector121:vector121603,7784
+.globl 607,7834
+vector122:vector122608,7851
+.globl 612,7901
+vector123:vector123613,7918
+.globl 617,7968
+vector124:vector124618,7985
+.globl 622,8035
+vector125:vector125623,8052
+.globl 627,8102
+vector126:vector126628,8119
+.globl 632,8169
+vector127:vector127633,8186
+.globl 637,8236
+vector128:vector128638,8253
+.globl 642,8303
+vector129:vector129643,8320
+.globl 647,8370
+vector130:vector130648,8387
+.globl 652,8437
+vector131:vector131653,8454
+.globl 657,8504
+vector132:vector132658,8521
+.globl 662,8571
+vector133:vector133663,8588
+.globl 667,8638
+vector134:vector134668,8655
+.globl 672,8705
+vector135:vector135673,8722
+.globl 677,8772
+vector136:vector136678,8789
+.globl 682,8839
+vector137:vector137683,8856
+.globl 687,8906
+vector138:vector138688,8923
+.globl 692,8973
+vector139:vector139693,8990
+.globl 697,9040
+vector140:vector140698,9057
+.globl 702,9107
+vector141:vector141703,9124
+.globl 707,9174
+vector142:vector142708,9191
+.globl 712,9241
+vector143:vector143713,9258
+.globl 717,9308
+vector144:vector144718,9325
+.globl 722,9375
+vector145:vector145723,9392
+.globl 727,9442
+vector146:vector146728,9459
+.globl 732,9509
+vector147:vector147733,9526
+.globl 737,9576
+vector148:vector148738,9593
+.globl 742,9643
+vector149:vector149743,9660
+.globl 747,9710
+vector150:vector150748,9727
+.globl 752,9777
+vector151:vector151753,9794
+.globl 757,9844
+vector152:vector152758,9861
+.globl 762,9911
+vector153:vector153763,9928
+.globl 767,9978
+vector154:vector154768,9995
+.globl 772,10045
+vector155:vector155773,10062
+.globl 777,10112
+vector156:vector156778,10129
+.globl 782,10179
+vector157:vector157783,10196
+.globl 787,10246
+vector158:vector158788,10263
+.globl 792,10313
+vector159:vector159793,10330
+.globl 797,10380
+vector160:vector160798,10397
+.globl 802,10447
+vector161:vector161803,10464
+.globl 807,10514
+vector162:vector162808,10531
+.globl 812,10581
+vector163:vector163813,10598
+.globl 817,10648
+vector164:vector164818,10665
+.globl 822,10715
+vector165:vector165823,10732
+.globl 827,10782
+vector166:vector166828,10799
+.globl 832,10849
+vector167:vector167833,10866
+.globl 837,10916
+vector168:vector168838,10933
+.globl 842,10983
+vector169:vector169843,11000
+.globl 847,11050
+vector170:vector170848,11067
+.globl 852,11117
+vector171:vector171853,11134
+.globl 857,11184
+vector172:vector172858,11201
+.globl 862,11251
+vector173:vector173863,11268
+.globl 867,11318
+vector174:vector174868,11335
+.globl 872,11385
+vector175:vector175873,11402
+.globl 877,11452
+vector176:vector176878,11469
+.globl 882,11519
+vector177:vector177883,11536
+.globl 887,11586
+vector178:vector178888,11603
+.globl 892,11653
+vector179:vector179893,11670
+.globl 897,11720
+vector180:vector180898,11737
+.globl 902,11787
+vector181:vector181903,11804
+.globl 907,11854
+vector182:vector182908,11871
+.globl 912,11921
+vector183:vector183913,11938
+.globl 917,11988
+vector184:vector184918,12005
+.globl 922,12055
+vector185:vector185923,12072
+.globl 927,12122
+vector186:vector186928,12139
+.globl 932,12189
+vector187:vector187933,12206
+.globl 937,12256
+vector188:vector188938,12273
+.globl 942,12323
+vector189:vector189943,12340
+.globl 947,12390
+vector190:vector190948,12407
+.globl 952,12457
+vector191:vector191953,12474
+.globl 957,12524
+vector192:vector192958,12541
+.globl 962,12591
+vector193:vector193963,12608
+.globl 967,12658
+vector194:vector194968,12675
+.globl 972,12725
+vector195:vector195973,12742
+.globl 977,12792
+vector196:vector196978,12809
+.globl 982,12859
+vector197:vector197983,12876
+.globl 987,12926
+vector198:vector198988,12943
+.globl 992,12993
+vector199:vector199993,13010
+.globl 997,13060
+vector200:vector200998,13077
+.globl 1002,13127
+vector201:vector2011003,13144
+.globl 1007,13194
+vector202:vector2021008,13211
+.globl 1012,13261
+vector203:vector2031013,13278
+.globl 1017,13328
+vector204:vector2041018,13345
+.globl 1022,13395
+vector205:vector2051023,13412
+.globl 1027,13462
+vector206:vector2061028,13479
+.globl 1032,13529
+vector207:vector2071033,13546
+.globl 1037,13596
+vector208:vector2081038,13613
+.globl 1042,13663
+vector209:vector2091043,13680
+.globl 1047,13730
+vector210:vector2101048,13747
+.globl 1052,13797
+vector211:vector2111053,13814
+.globl 1057,13864
+vector212:vector2121058,13881
+.globl 1062,13931
+vector213:vector2131063,13948
+.globl 1067,13998
+vector214:vector2141068,14015
+.globl 1072,14065
+vector215:vector2151073,14082
+.globl 1077,14132
+vector216:vector2161078,14149
+.globl 1082,14199
+vector217:vector2171083,14216
+.globl 1087,14266
+vector218:vector2181088,14283
+.globl 1092,14333
+vector219:vector2191093,14350
+.globl 1097,14400
+vector220:vector2201098,14417
+.globl 1102,14467
+vector221:vector2211103,14484
+.globl 1107,14534
+vector222:vector2221108,14551
+.globl 1112,14601
+vector223:vector2231113,14618
+.globl 1117,14668
+vector224:vector2241118,14685
+.globl 1122,14735
+vector225:vector2251123,14752
+.globl 1127,14802
+vector226:vector2261128,14819
+.globl 1132,14869
+vector227:vector2271133,14886
+.globl 1137,14936
+vector228:vector2281138,14953
+.globl 1142,15003
+vector229:vector2291143,15020
+.globl 1147,15070
+vector230:vector2301148,15087
+.globl 1152,15137
+vector231:vector2311153,15154
+.globl 1157,15204
+vector232:vector2321158,15221
+.globl 1162,15271
+vector233:vector2331163,15288
+.globl 1167,15338
+vector234:vector2341168,15355
+.globl 1172,15405
+vector235:vector2351173,15422
+.globl 1177,15472
+vector236:vector2361178,15489
+.globl 1182,15539
+vector237:vector2371183,15556
+.globl 1187,15606
+vector238:vector2381188,15623
+.globl 1192,15673
+vector239:vector2391193,15690
+.globl 1197,15740
+vector240:vector2401198,15757
+.globl 1202,15807
+vector241:vector2411203,15824
+.globl 1207,15874
+vector242:vector2421208,15891
+.globl 1212,15941
+vector243:vector2431213,15958
+.globl 1217,16008
+vector244:vector2441218,16025
+.globl 1222,16075
+vector245:vector2451223,16092
+.globl 1227,16142
+vector246:vector2461228,16159
+.globl 1232,16209
+vector247:vector2471233,16226
+.globl 1237,16276
+vector248:vector2481238,16293
+.globl 1242,16343
+vector249:vector2491243,16360
+.globl 1247,16410
+vector250:vector2501248,16427
+.globl 1252,16477
+vector251:vector2511253,16494
+.globl 1257,16544
+vector252:vector2521258,16561
+.globl 1262,16611
+vector253:vector2531263,16628
+.globl 1267,16678
+vector254:vector2541268,16695
+.globl 1272,16745
+vector255:vector2551273,16762
+.globl 1280,16834
+vectors:vectors1281,16849
+
+bio.c,186
+  struct spinlock lock;31,1051
+  struct buf buf[buf32,1075
+  struct buf head;36,1190
+} bcache;37,1209
+binit(40,1225
+bget(63,1753
+bread(100,2677
+bwrite(113,2869
+brelse(124,3053
+
+bootmain.c,89
+bootmain(16,389
+diskready(49,1158
+waitdisk(56,1291
+readsect(65,1414
+readseg(85,2047
+
+cat.c,42
+char buf[buf5,56
+cat(8,77
+main(21,241
+
+cmos.c,147
+uint cmosread(7,91
+void cmoswrite(17,258
+static void fill_rtcdate(29,495
+void cmostime(40,819
+#define    CONV(65,1351
+#undef     CONV72,1525
+
+console.c,506
+static int panicked 19,363
+  struct spinlock lock;22,405
+  int locking;23,429
+} cons;24,444
+printint(27,465
+cprintf(54,881
+panic(106,1752
+#define BACKSPACE 125,2053
+#define CRTPORT 126,2077
+static ushort *crt crt127,2099
+cgaputc(130,2171
+consputc(164,2844
+#define INPUT_BUF 179,3030
+  char buf[buf181,3061
+  uint r;182,3084
+  uint w;183,3109
+  uint e;184,3135
+} input;185,3160
+#define C(187,3170
+consoleintr(190,3214
+consoleread(233,4249
+consolewrite(271,4914
+consoleinit(286,5124
+
+debug.c,184
+static int uart;16,527
+static volatile uint locked;17,574
+lock(26,1014
+unlock(38,1328
+cantransmit(46,1407
+debugputc(52,1501
+debuginit(64,1665
+printint(92,2561
+debugf(117,2904
+
+echo.c,11
+main(6,60
+
+exec.c,13
+exec(10,130
+
+file.c,238
+struct devsw devsw[devsw12,140
+  struct spinlock lock;14,175
+  struct file file[file15,199
+} ftable;16,226
+fileinit(19,242
+filealloc(26,341
+filedup(44,639
+fileclose(56,849
+filestat(83,1281
+fileread(96,1471
+filewrite(117,1840
+
+forktest.c,62
+#define N 8,161
+printf(11,183
+forktest(17,249
+main(52,727
+
+fs.c,570
+#define min(23,669
+struct superblock sb;27,803
+readsb(31,856
+bzero(42,1022
+balloc(56,1212
+bfree(81,1734
+  struct spinlock lock;160,4422
+  struct inode inode[inode161,4446
+} icache;162,4476
+iinit(165,4492
+ialloc(181,4937
+iupdate(204,5464
+iget(225,6003
+idup(260,6714
+ilock(271,6891
+iunlock(303,7592
+iput(322,8115
+iunlockput(344,8601
+bmap(361,9038
+itrunc(396,9866
+stati(427,10408
+readi(439,10610
+writei(467,11216
+namecmp(502,11904
+dirlookup(510,12087
+dirlink(537,12677
+skipelem(581,13797
+namex(610,14427
+namei(645,15042
+nameiparent(652,15131
+
+grep.c,107
+char buf[buf7,107
+grep(11,154
+main(39,588
+match(73,1162
+int matchhere(85,1416
+int matchstar(99,1762
+
+ide.c,214
+static struct spinlock idelock;19,425
+static struct buf *idequeue;idequeue20,457
+static int havedisk1;22,487
+diskready(26,556
+idewait(34,736
+ideinit(46,881
+idestart(70,1383
+ideintr(99,2305
+iderw(133,3057
+
+init.c,36
+char *argv[argv8,116
+main(11,149
+
+ioapic.c,477
+#define IOAPIC 9,205
+#define REG_ID 11,274
+#define REG_VER 12,321
+#define REG_ARB 13,373
+#define REG_TABLE 14,432
+#define INT_DISABLED 21,748
+#define INT_LEVEL 22,804
+#define INT_ACTIVELOW 23,868
+#define INT_LOGICAL 24,926
+volatile struct ioapic *ioapic;ioapic26,999
+static int maxintr;27,1055
+struct ioapic 30,1172
+  uint reg;31,1188
+  uint pad[pad32,1218
+  uint data;33,1254
+ioapicread(37,1300
+ioapicwrite(44,1419
+ioapicinit(51,1543
+ioapicenable(76,2220
+
+kalloc.c,240
+struct run 15,395
+  struct run *next;next16,408
+  struct spinlock lock;20,441
+  int use_lock;21,465
+  struct run *freelist;freelist22,481
+} kmem;23,505
+kinit1(31,810
+kinit2(39,933
+freerange(46,1024
+kfree(60,1393
+kalloc(83,1887
+
+kbd.c,30
+kbdgetc(7,76
+kbdintr(47,885
+
+kill.c,11
+main(6,60
+
+lapic.c,820
+#define ID 13,321
+#define VER 14,356
+#define TPR 15,396
+#define EOI 16,442
+#define SVR 17,478
+  #define ENABLE 18,536
+#define ESR 19,585
+#define ICRLO 20,630
+  #define INIT 21,680
+  #define STARTUP 22,728
+  #define DELIVS 23,777
+  #define ASSERT 24,830
+  #define DEASSERT 25,898
+  #define LEVEL 26,930
+  #define BCAST 27,983
+  #define BUSY 28,1055
+  #define FIXED 29,1087
+#define ICRHI 30,1119
+#define TIMER 31,1177
+  #define X1 32,1238
+  #define PERIODIC 33,1294
+#define PCINT 34,1340
+#define LINT0 35,1396
+#define LINT1 36,1457
+#define ERROR 37,1518
+  #define MASKED 38,1579
+#define TICR 39,1633
+#define TCCR 40,1685
+#define TDCR 41,1737
+volatile uint *lapic;lapic43,1797
+lapicw(46,1856
+lapicinit(54,1986
+cpunum(100,3196
+lapiceoi(121,3746
+microdelay(130,3904
+lapicstartap(137,4042
+
+ln.c,11
+main(6,60
+
+log.c,490
+struct logheader 33,1106
+  int n;34,1125
+  int block[block35,1137
+struct log 38,1163
+  struct spinlock lock;39,1176
+  int start;40,1200
+  int size;41,1213
+  int outstanding;42,1225
+  int committing;43,1284
+  int dev;44,1332
+  struct logheader lh;45,1343
+struct log log;47,1369
+initlog(53,1450
+install_trans(69,1787
+read_head(85,2237
+write_head(101,2605
+recover_from_log(115,2879
+begin_op(125,3087
+end_op(145,3548
+write_log(175,4124
+commit(190,4471
+log_write(211,5087
+
+ls.c,39
+fmtname(7,78
+ls(26,430
+main(74,1398
+
+main.c,169
+static void mpmain(10,163
+main(17,450
+mpenter(46,1443
+mpmain(56,1555
+pde_t entrypgdir[entrypgdir64,1757
+startothers(68,1845
+pde_t entrypgdir[entrypgdir107,3130
+
+memide.c,112
+static int disksize;17,339
+static uchar *memdisk;memdisk18,360
+ideinit(21,389
+ideintr(29,515
+iderw(38,707
+
+mkdir.c,11
+main(6,60
+
+mkfs.c,477
+#define stat 8,119
+#define static_assert(15,274
+#define NINODES 18,358
+int nbitmap 23,475
+int ninodeblocks 24,511
+int nlog 25,549
+int nmeta;26,569
+int nblocks;27,640
+int fsfd;29,680
+struct superblock sb;30,690
+char zeroes[zeroes31,712
+uint freeinode 32,732
+uint freeblock;33,752
+xshort(45,1029
+xint(55,1134
+main(67,1268
+wsect(169,3652
+winode(182,3855
+rinode(196,4076
+rsect(209,4279
+ialloc(222,4480
+balloc(236,4702
+#define min(251,5042
+iappend(254,5090
+
+mp.c,168
+struct cpu cpus[cpus14,290
+int ismp;15,313
+int ncpu;16,323
+uchar ioapicid;17,333
+sum(20,363
+mpsearch1(32,549
+mpsearch(50,1065
+mpconfig(74,1672
+mpinit(93,2060
+
+picirq.c,155
+#define IO_PIC1 8,171
+#define IO_PIC2 9,224
+#define IRQ_SLAVE 11,278
+static ushort irqmask 15,436
+picsetmask(18,499
+picenable(26,606
+picinit(33,717
+
+pipe.c,266
+#define PIPESIZE 10,148
+struct pipe 12,170
+  struct spinlock lock;13,184
+  char data[data14,208
+  uint nread;15,231
+  uint nwrite;16,273
+  int readopen;17,318
+  int writeopen;18,361
+pipealloc(22,413
+pipeclose(59,1060
+pipewrite(78,1388
+piperead(100,1886
+
+printf.c,43
+putc(6,68
+printint(12,126
+printf(40,558
+
+proc.c,415
+  struct spinlock lock;10,140
+  struct proc proc[proc11,164
+} ptable;12,191
+static struct proc *initproc;initproc14,202
+int nextpid 16,233
+pinit(23,344
+allocproc(34,596
+userinit(78,1446
+growproc(107,2204
+fork(128,2642
+exit(172,3591
+wait(216,4427
+scheduler(265,5624
+sched(300,6447
+yield(319,6842
+forkret(330,7069
+sleep(351,7566
+wakeup1(389,8388
+wakeup(400,8608
+kill(411,8821
+procdump(435,9350
+
+rm.c,11
+main(6,60
+
+sh.c,1130
+#define EXEC 8,101
+#define REDIR 9,117
+#define PIPE 10,133
+#define LIST 11,149
+#define BACK 12,165
+#define MAXARGS 14,182
+struct cmd 16,202
+  int type;17,215
+struct execcmd 20,231
+  int type;21,248
+  char *argv[argv22,260
+  char *eargv[eargv23,283
+struct redircmd 26,311
+  int type;27,329
+  struct cmd *cmd;cmd28,341
+  char *file;file29,360
+  char *efile;efile30,374
+  int mode;31,389
+  int fd;32,401
+struct pipecmd 35,415
+  int type;36,432
+  struct cmd *left;left37,444
+  struct cmd *right;right38,464
+struct listcmd 41,489
+  int type;42,506
+  struct cmd *left;left43,518
+  struct cmd *right;right44,538
+struct backcmd 47,563
+  int type;48,580
+  struct cmd *cmd;cmd49,592
+runcmd(58,750
+getcmd(134,2073
+main(145,2224
+panic(176,2881
+fork1(183,2939
+execcmd(197,3077
+redircmd(208,3241
+pipecmd(224,3564
+listcmd(237,3801
+backcmd(250,4038
+char whitespace[whitespace263,4249
+char symbols[symbols264,4282
+gettoken(267,4315
+peek(312,4928
+parsecmd(329,5257
+parseline(346,5505
+parsepipe(363,5798
+parseredirs(376,6007
+parseblock(401,6539
+parseexec(417,6843
+nulterminate(451,7514
+
+spinlock.c,122
+initlock(13,192
+acquire(25,458
+release(44,886
+getcallerpcs(68,1656
+holding(86,2028
+pushcli(97,2294
+popcli(108,2426
+
+stressfs.c,13
+main(17,466
+
+string.c,127
+memset(5,43
+memcmp(16,228
+memmove(32,429
+memcpy(53,732
+strncmp(59,815
+strncpy(69,983
+safestrcpy(83,1196
+strlen(97,1368
+
+syscall.c,100
+fetchint(17,445
+fetchstr(29,762
+argint(45,1027
+argptr(54,1276
+argstr(71,1726
+syscall(126,3042
+
+sysfile.c,317
+argfd(20,445
+fdalloc(39,805
+sys_dup(53,980
+sys_read(67,1141
+sys_write(79,1318
+sys_close(91,1497
+sys_fstat(104,1645
+sys_link(116,1876
+isdirempty(166,2617
+sys_unlink(182,2904
+create(239,3817
+sys_open(284,4711
+sys_mkdir(334,5539
+sys_mknod(350,5757
+sys_chdir(370,6070
+sys_exec(394,6399
+sys_pipe(420,6857
+
+sysproc.c,141
+sys_fork(10,131
+sys_exit(16,172
+sys_wait(23,234
+sys_kill(29,275
+sys_getpid(39,372
+sys_sbrk(45,418
+sys_sleep(59,574
+sys_uptime(82,946
+
+timer.c,209
+#define IO_TIMER1 10,208
+#define TIMER_FREQ 16,397
+#define TIMER_DIV(17,429
+#define TIMER_MODE 19,479
+#define TIMER_SEL0 20,538
+#define TIMER_RATEGEN 21,590
+#define TIMER_16BIT 22,648
+timerinit(25,720
+
+trap.c,154
+static struct gatedesc idt[idt11,202
+struct spinlock tickslock;13,304
+uint ticks;14,331
+tvinit(17,349
+idtinit(29,569
+trap_exit(37,688
+trap(43,728
+
+uart.c,136
+static int uart;9,127
+uartinit(12,173
+cantransmit(47,1058
+hasreceived(53,1151
+uartputc(59,1237
+uartgetc(71,1406
+uartintr(81,1534
+
+ulib.c,129
+strcpy(8,98
+strcmp(19,202
+strlen(27,319
+memset(37,398
+strchr(44,476
+gets(53,585
+stat(71,818
+atoi(85,978
+memmove(96,1099
+
+umalloc.c,279
+typedef long Align;9,175
+union header 11,196
+    union header *ptr;ptr13,222
+    uint size;14,245
+  } s;15,260
+  Align x;16,267
+typedef union header Header;19,282
+static Header base;21,312
+static Header *freep;freep22,332
+free(25,360
+morecore(47,823
+malloc(64,1056
+
+usertests.c,1003
+char buf[buf11,173
+char name[name12,189
+char *echoargv[echoargv13,203
+int stdout 14,263
+iputtest(18,337
+exitiputtest(43,831
+openiputtest(85,1688
+opentest(119,2277
+writetest(139,2609
+writetest1(188,3681
+createtest(245,4745
+void dirtest(267,5152
+exectest(294,5585
+pipe1(306,5771
+preempt(359,6798
+exitwait(405,7516
+mem(428,7841
+sharedfd(465,8476
+fourfiles(518,9579
+createdelete(584,10830
+  enum { N 586,10851
+unlinkread(657,12301
+linktest(702,13163
+concreate(765,14260
+    ushort inum;771,14341
+    char name[name772,14358
+linkunlink(858,16072
+bigdir(893,16610
+subdir(935,17313
+bigwrite(1119,21181
+bigfile(1148,21691
+fourteen(1204,22704
+rmdot(1245,23709
+dirfile(1284,24428
+iref(1344,25633
+forktest(1380,26356
+sbrktest(1415,26841
+#define BIG 1452,27548
+validateint(1550,29835
+validatetest(1563,30060
+char uninit[uninit1593,30672
+bsstest(1595,30697
+bigargtest(1613,31073
+fsfull(1648,32026
+unsigned long randstate 1698,33056
+rand(1700,33098
+main(1707,33182
+
+vm.c,487
+static pde_t *kpgdir;kpgdir11,194
+seginit(16,327
+walkpgdir(45,1213
+mappages(70,1933
+static struct kmap 114,3467
+  void *virt;virt115,3488
+  uint phys_start;116,3502
+  uint phys_end;117,3521
+  int perm;118,3538
+} kmap[kmap119,3550
+setupkvm(128,3898
+kvmalloc(148,4405
+switchkvm(159,4645
+switchuvm(166,4790
+inituvm(183,5239
+loaduvm(200,5726
+allocuvm(224,6373
+deallocuvm(254,7146
+freevm(282,7691
+clearpteu(301,8056
+copyuvm(314,8285
+uva2ka(346,8950
+copyout(362,9330
+
+wc.c,41
+char buf[buf5,56
+wc(8,77
+main(36,538
+
+zombie.c,12
+main(9,125
+
+asm.h,182
+#define SEG_NULLASM 5,50
+#define SEG_ASM(11,304
+#define STA_X 16,575
+#define STA_E 17,625
+#define STA_C 18,694
+#define STA_W 19,767
+#define STA_R 20,834
+#define STA_A 21,896
+
+buf.h,261
+struct buf 1,0
+  int flags;2,13
+  uint dev;3,26
+  uint blockno;4,38
+  struct buf *prev;prev5,54
+  struct buf *next;next6,92
+  struct buf *qnext;qnext7,112
+  uchar data[data8,147
+#define B_BUSY 10,171
+#define B_VALID 11,228
+#define B_DIRTY 12,283
+
+cmos.h,500
+#define CMOS_PORT 9,541
+  #define CMOS_NMI_BIT 10,567
+#define CMOS_RETURN 11,618
+#define CMOS_SECS 14,692
+#define CMOS_MINS 15,718
+#define CMOS_HOURS 16,744
+  #define CMOS_PM_BIT 17,770
+#define CMOS_DAY 18,816
+#define CMOS_MONTH 19,842
+#define CMOS_YEAR 20,868
+#define CMOS_STATA 21,894
+  #define CMOS_UIP_BIT 22,920
+#define CMOS_STATB 23,982
+  #define CMOS_24H_BIT 24,1008
+  #define CMOS_BINARY_BIT 25,1069
+#define CMOS_SHUTDOWN_STAT 28,1199
+  #define CMOS_JMP_DWORD_NO_EOI 29,1231
+
+date.h,132
+struct rtcdate 1,0
+  uint second;2,17
+  uint minute;3,32
+  uint hour;4,47
+  uint day;5,60
+  uint month;6,72
+  uint year;7,86
+
+defs.h,90
+void            panic(28,578
+void            scheduler(121,3220
+#define NELEM(189,5370
+
+elf.h,716
+#define ELF_MAGIC 3,37
+struct elfhdr 6,114
+  uint magic;7,130
+  uchar elf[elf8,169
+  ushort type;9,186
+  ushort machine;10,201
+  uint version;11,219
+  uint entry;12,235
+  uint phoff;13,249
+  uint shoff;14,263
+  uint flags;15,277
+  ushort ehsize;16,291
+  ushort phentsize;17,308
+  ushort phnum;18,328
+  ushort shentsize;19,344
+  ushort shnum;20,364
+  ushort shstrndx;21,380
+struct proghdr 25,429
+  uint type;26,446
+  uint off;27,459
+  uint vaddr;28,471
+  uint paddr;29,485
+  uint filesz;30,499
+  uint memsz;31,514
+  uint flags;32,528
+  uint align;33,542
+#define ELF_PROG_LOAD 37,587
+#define ELF_PROG_FLAG_EXEC 40,653
+#define ELF_PROG_FLAG_WRITE 41,687
+#define ELF_PROG_FLAG_READ 42,721
+
+fcntl.h,89
+#define O_RDONLY 1,0
+#define O_WRONLY 2,24
+#define O_RDWR 3,48
+#define O_CREATE 4,72
+
+file.h,681
+struct file 1,0
+  enum { FD_NONE,2,14
+  enum { FD_NONE, FD_PIPE,2,14
+  enum { FD_NONE, FD_PIPE, FD_INODE 2,14
+  enum { FD_NONE, FD_PIPE, FD_INODE } type;2,14
+  int ref;3,58
+  char readable;4,88
+  char writable;5,105
+  struct pipe *pipe;pipe6,122
+  struct inode *ip;ip7,143
+  uint off;8,163
+struct inode 13,210
+  uint dev;14,225
+  uint inum;15,264
+  int ref;16,302
+  int flags;17,343
+  short type;19,385
+  short major;20,429
+  short minor;21,444
+  short nlink;22,459
+  uint size;23,474
+  uint addrs[addrs24,487
+#define I_BUSY 26,515
+#define I_VALID 27,534
+struct devsw 31,615
+  int (*read)read32,630
+  int (*write)write33,672
+#define CONSOLE 38,749
+
+fs.h,650
+#define ROOTINO 4,91
+#define BSIZE 5,127
+struct superblock 13,375
+  uint size;14,395
+  uint nblocks;15,454
+  uint ninodes;16,500
+  uint nlog;17,542
+  uint logstart;18,587
+  uint inodestart;19,643
+  uint bmapstart;20,701
+#define NDIRECT 23,766
+#define NINDIRECT 24,785
+#define MAXFILE 25,826
+struct dinode 28,892
+  short type;29,908
+  short major;30,945
+  short minor;31,1005
+  short nlink;32,1065
+  uint size;33,1132
+  uint addrs[addrs34,1180
+#define IPB 38,1256
+#define IBLOCK(41,1339
+#define BPB 44,1419
+#define BBLOCK(47,1500
+#define DIRSIZ 50,1613
+struct dirent 52,1632
+  ushort inum;53,1648
+  char name[name54,1663
+
+ide.h,770
+#define SECTOR_SIZE 4,100
+#define IDE_DATA_PRIMARY 8,232
+#define IDE_CTRL_PRIMARY 9,265
+#define IDE_DATA_SECONDARY 10,298
+#define IDE_CTRL_SECONDARY 11,331
+#define IDE_REG_DATA 15,451
+#define IDE_REG_ERROR 16,512
+#define IDE_REG_SECTORS 17,541
+#define IDE_REG_LBA0 18,570
+#define IDE_REG_LBA1 19,599
+#define IDE_REG_LBA2 20,628
+#define IDE_REG_DISK 21,657
+#define IDE_REG_COMMAND 22,686
+#define IDE_REG_STATUS 23,733
+#define IDE_DISK_CHS 26,805
+#define IDE_DISK_LBA 27,875
+#define IDE_BSY 30,979
+#define IDE_DRDY 31,1033
+#define IDE_DF 32,1094
+#define IDE_DRQ 33,1142
+#define IDE_ERR 34,1182
+#define IDE_CMD_READ 38,1333
+#define IDE_CMD_WRITE 39,1360
+#define IDE_CMD_IDENT 40,1387
+#define IDE_REG_CTRL 44,1501
+#define IDE_REG_ALTSTATUS 45,1556
+
+kbd.h,704
+#define KBSTATP 3,36
+#define KBS_DIB 4,101
+#define KBDATAP 5,155
+#define NO 7,208
+#define SHIFT 9,235
+#define CTL 10,266
+#define ALT 11,297
+#define CAPSLOCK 13,329
+#define NUMLOCK 14,360
+#define SCROLLLOCK 15,391
+#define E0ESC 17,423
+#define KEY_HOME 20,475
+#define KEY_END 21,504
+#define KEY_UP 22,533
+#define KEY_DN 23,562
+#define KEY_LF 24,591
+#define KEY_RT 25,620
+#define KEY_PGUP 26,649
+#define KEY_PGDN 27,678
+#define KEY_INS 28,707
+#define KEY_DEL 29,736
+#define C(32,789
+static uchar shiftcode[shiftcode34,813
+static uchar togglecode[togglecode44,948
+static uchar normalmap[normalmap51,1048
+static uchar shiftmap[shiftmap73,1941
+static uchar ctlmap[ctlmap95,2833
+
+memlayout.h,201
+#define EXTMEM 3,18
+#define PHYSTOP 4,88
+#define DEVSPACE 5,155
+#define KERNBASE 8,303
+#define KERNLINK 9,371
+#define V2P(14,535
+#define P2V(15,576
+#define V2P_WO(20,675
+#define P2V_WO(21,710
+
+mmu.h,3542
+#define FL_CF 5,100
+#define FL_PF 6,154
+#define FL_AF 7,209
+#define FL_ZF 8,273
+#define FL_SF 9,326
+#define FL_TF 10,379
+#define FL_IF 11,432
+#define FL_DF 12,492
+#define FL_OF 13,550
+#define FL_IOPL_MASK 14,607
+#define FL_IOPL_0 15,678
+#define FL_IOPL_1 16,733
+#define FL_IOPL_2 17,788
+#define FL_IOPL_3 18,843
+#define FL_NT 19,898
+#define FL_RF 20,953
+#define FL_VM 21,1008
+#define FL_AC 22,1069
+#define FL_VIF 23,1128
+#define FL_VIP 24,1194
+#define FL_ID 25,1263
+#define CR0_PE 28,1341
+#define CR0_MP 29,1402
+#define CR0_EM 30,1465
+#define CR0_TS 31,1518
+#define CR0_ET 32,1575
+#define CR0_NE 33,1633
+#define CR0_WP 34,1691
+#define CR0_AM 35,1748
+#define CR0_NW 36,1806
+#define CR0_CD 37,1866
+#define CR0_PG 38,1923
+#define CR4_PSE 40,1974
+#define SEG_KCODE 42,2038
+#define SEG_KDATA 43,2074
+#define SEG_KCPU 44,2116
+#define SEG_UCODE 45,2160
+#define SEG_UDATA 46,2194
+#define SEG_TSS 47,2234
+struct segdesc 52,2342
+  uint lim_15_0 53,2359
+  uint base_15_0 54,2411
+  uint base_23_16 55,2470
+  uint type 56,2532
+  uint s 57,2592
+  uint dpl 58,2646
+  uint p 59,2699
+  uint lim_19_16 60,2733
+  uint avl 61,2786
+  uint rsv1 62,2848
+  uint db 63,2883
+  uint g 64,2948
+  uint base_31_24 65,3015
+#define SEG(69,3097
+#define SEG16(73,3319
+#define DPL_USER 79,3549
+#define STA_X 82,3623
+#define STA_E 83,3673
+#define STA_C 84,3742
+#define STA_W 85,3815
+#define STA_R 86,3882
+#define STA_A 87,3944
+#define STS_T16A 90,4013
+#define STS_LDT 91,4065
+#define STS_T16B 92,4119
+#define STS_CG16 93,4166
+#define STS_TG 94,4214
+#define STS_IG16 95,4275
+#define STS_TG16 96,4328
+#define STS_T32A 97,4376
+#define STS_T32B 98,4428
+#define STS_CG32 99,4475
+#define STS_IG32 100,4523
+#define STS_TG32 101,4576
+#define PDX(112,5001
+#define PTX(115,5081
+#define PGADDR(118,5194
+#define NPDENTRIES 121,5313
+#define NPTENTRIES 122,5387
+#define PGSIZE 123,5444
+#define PGSHIFT 125,5503
+#define PTXSHIFT 126,5551
+#define PDXSHIFT 127,5620
+#define PGROUNDUP(129,5690
+#define PGROUNDDOWN(130,5745
+#define PTE_P 133,5828
+#define PTE_W 134,5871
+#define PTE_U 135,5916
+#define PTE_PWT 136,5956
+#define PTE_PCD 137,6005
+#define PTE_A 138,6054
+#define PTE_D 139,6098
+#define PTE_PS 140,6139
+#define PTE_MBZ 141,6184
+#define PTE_ADDR(144,6287
+#define PTE_FLAGS(145,6334
+typedef uint pte_t;148,6404
+struct taskstate 151,6454
+  uint link;152,6473
+  uint esp0;153,6513
+  ushort ss0;154,6574
+  ushort padding1;155,6637
+  uint *esp1;esp1156,6656
+  ushort ss1;157,6670
+  ushort padding2;158,6684
+  uint *esp2;esp2159,6703
+  ushort ss2;160,6717
+  ushort padding3;161,6731
+  void *cr3;cr3162,6750
+  uint *eip;eip163,6794
+  uint eflags;164,6852
+  uint eax;165,6867
+  uint ecx;166,6920
+  uint edx;167,6932
+  uint ebx;168,6944
+  uint *esp;esp169,6956
+  uint *ebp;ebp170,6969
+  uint esi;171,6982
+  uint edi;172,6994
+  ushort es;173,7006
+  ushort padding4;174,7072
+  ushort cs;175,7091
+  ushort padding5;176,7104
+  ushort ss;177,7123
+  ushort padding6;178,7136
+  ushort ds;179,7155
+  ushort padding7;180,7168
+  ushort fs;181,7187
+  ushort padding8;182,7200
+  ushort gs;183,7219
+  ushort padding9;184,7232
+  ushort ldt;185,7251
+  ushort padding10;186,7265
+  ushort t;187,7285
+  ushort iomb;188,7329
+struct gatedesc 193,7440
+  uint off_15_0 194,7458
+  uint cs 195,7518
+  uint args 196,7567
+  uint rsv1 197,7629
+  uint type 198,7689
+  uint s 199,7741
+  uint dpl 200,7787
+  uint p 201,7854
+  uint off_31_16 202,7889
+#define SETGATE(213,8428
+
+mp.h,1345
+struct mp 3,52
+  uchar signature[signature4,96
+  void *physaddr;physaddr5,138
+  uchar length;6,202
+  uchar specrev;7,239
+  uchar checksum;8,279
+  uchar type;9,341
+  uchar imcrp;10,398
+  uchar reserved[reserved11,413
+struct mpconf 14,438
+  uchar signature[signature15,492
+  ushort length;16,534
+  uchar specrev;17,588
+  uchar checksum;18,628
+  uchar oemid[oemid19,690
+  uchar productid[productid20,732
+  uint *oemtable;oemtable21,778
+  ushort oemlength;22,831
+  ushort entry;23,883
+  uint *lapicaddr;lapicaddr24,930
+  ushort xlength;25,987
+  uchar xchecksum;26,1044
+  uchar reserved;27,1103
+struct mpproc 30,1125
+  uchar type;31,1174
+  uchar apicid;32,1224
+  uchar version;33,1273
+  uchar flags;34,1327
+    #define MP_PROC_ENABLED 35,1372
+    #define MP_PROC_BOOT 36,1431
+  uchar signature[signature37,1493
+  uint feature;38,1542
+    #define MP_PROC_FPU 39,1614
+    #define MP_PROC_MCE 40,1682
+    #define MP_PROC_CX8 41,1757
+    #define MP_PROC_APIC 42,1836
+  uchar reserved[reserved43,1914
+struct mpioapic 46,1939
+  uchar type;47,1987
+  uchar apicid;48,2037
+  uchar version;49,2084
+  uchar flags;50,2136
+    #define MP_APIC_ENABLED 51,2186
+  uint *addr;addr52,2245
+#define MPPROC 56,2322
+#define MPBUS 57,2367
+#define MPIOAPIC 58,2406
+#define MPIOINTR 59,2450
+#define MPLINTR 60,2506
+
+param.h,290
+#define NPROC 1,0
+#define KSTACKSIZE 2,56
+#define NCPU 3,117
+#define NOFILE 4,168
+#define NFILE 5,219
+#define NINODE 6,269
+#define NDEV 7,330
+#define ROOTDEV 8,386
+#define MAXARG 9,453
+#define MAXOPBLOCKS 10,500
+#define LOGSIZE 11,561
+#define NBUF 12,633
+#define FSSIZE 13,699
+
+proc.h,1183
+#define NSEGS 2,26
+struct cpu 5,64
+  uchar id;6,77
+  struct context *scheduler;scheduler7,150
+  struct taskstate ts;8,216
+  struct segdesc gdt[gdt9,290
+  volatile uint started;10,352
+  int ncli;11,407
+  int intena;12,467
+  struct cpu *cpu;cpu15,588
+  struct proc *proc;proc16,607
+struct context 52,2279
+  uint edi;53,2296
+  uint esi;54,2308
+  uint ebx;55,2320
+  uint ebp;56,2332
+  uint eip;57,2344
+enum procstate 60,2360
+enum procstate { UNUSED,60,2360
+enum procstate { UNUSED, EMBRYO,60,2360
+enum procstate { UNUSED, EMBRYO, SLEEPING,60,2360
+enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE,60,2360
+enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING,60,2360
+enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE 60,2360
+struct proc 63,2454
+  uint sz;64,2468
+  pde_t* pgdir;65,2533
+  char *kstack;kstack66,2578
+  enum procstate state;67,2652
+  int pid;68,2700
+  struct proc *parent;parent69,2745
+  struct trapframe *tf;tf70,2794
+  struct context *context;context71,2859
+  void *chan;chan72,2921
+  int killed;73,2985
+  struct file *ofile[ofile74,3049
+  struct inode *cwd;cwd75,3094
+  char name[name76,3146
+
+spinlock.h,118
+struct spinlock 2,26
+  uint locked;3,44
+  char *name;name6,109
+  struct cpu *cpu;cpu7,147
+  uint pcs[pcs8,197
+
+stat.h,174
+#define T_DIR 1,0
+#define T_FILE 2,32
+#define T_DEV 3,59
+struct stat 5,89
+  short type;6,103
+  int dev;7,134
+  uint ino;8,178
+  short nlink;9,209
+  uint size;10,251
+
+syscall.h,525
+#define SYS_fork 2,23
+#define SYS_exit 3,45
+#define SYS_wait 4,67
+#define SYS_pipe 5,89
+#define SYS_read 6,111
+#define SYS_kill 7,133
+#define SYS_exec 8,155
+#define SYS_fstat 9,177
+#define SYS_chdir 10,199
+#define SYS_dup 11,221
+#define SYS_getpid 12,243
+#define SYS_sbrk 13,265
+#define SYS_sleep 14,287
+#define SYS_uptime 15,309
+#define SYS_open 16,331
+#define SYS_write 17,353
+#define SYS_mknod 18,375
+#define SYS_unlink 19,397
+#define SYS_link 20,419
+#define SYS_mkdir 21,441
+#define SYS_close 22,463
+
+traps.h,664
+#define T_DIVIDE 4,60
+#define T_DEBUG 5,108
+#define T_NMI 6,159
+#define T_BRKPT 7,217
+#define T_OFLOW 8,263
+#define T_BOUND 9,307
+#define T_ILLOP 10,355
+#define T_DEVICE 11,405
+#define T_DBLFLT 12,461
+#define T_TSS 14,574
+#define T_SEGNP 15,637
+#define T_STACK 16,692
+#define T_GPFLT 17,743
+#define T_PGFLT 18,803
+#define T_FPERR 20,893
+#define T_ALIGN 21,949
+#define T_MCHK 22,999
+#define T_SIMDERR 23,1048
+#define T_SYSCALL 27,1226
+#define T_DEFAULT 28,1273
+#define T_IRQ0 30,1318
+#define IRQ_TIMER 32,1385
+#define IRQ_KBD 33,1412
+#define IRQ_COM1 34,1439
+#define IRQ_IDE 35,1466
+#define IRQ_ERROR 36,1493
+#define IRQ_SPURIOUS 37,1520
+
+types.h,129
+typedef unsigned int   uint;1,0
+typedef unsigned short ushort;2,29
+typedef unsigned char  uchar;3,60
+typedef uint pde_t;4,90
+
+uart.h,637
+#define COM1 4,70
+#define COM2 5,92
+#define COM3 6,114
+#define COM4 7,136
+#define UART_TRANSMIT_BUFFER 12,322
+#define UART_RECEIVE_BUFFER 13,365
+#define UART_DIVISOR_LOW 14,413
+#define UART_INTERRUPT_ENABLE 15,472
+#define UART_DIVISOR_HIGH 16,526
+#define UART_INTERRUPT_ID 17,585
+#define UART_FIFO_CONTROL 18,633
+#define UART_LINE_CONTROL 19,682
+#define UART_MODEM_CONTROL 20,736
+#define UART_LINE_STATUS 21,790
+#define UART_MODEM_STATUS 22,838
+#define UART_SCRATCH 23,886
+#define UART_DIVISOR_LATCH 26,979
+#define UART_TRANSMIT_READY 29,1090
+#define UART_RECEIVE_READY 30,1161
+#define UART_RECEIVE_INTERRUPT 33,1280
+
+user.h,15
+int exit(6,62
+
+x86.h,867
+inb(5,139
+insl(14,265
+outb(23,482
+outw(29,592
+outsl(35,703
+stosb(44,918
+stosl(53,1137
+lgdt(64,1373
+lidt(78,1580
+ltr(90,1770
+readeflags(96,1850
+loadgs(104,1974
+cli(110,2060
+sti(116,2117
+xchg(122,2174
+rcr2(135,2461
+lcr3(143,2568
+rdtsc(149,2654
+struct trapframe 157,2869
+  uint edi;159,2922
+  uint esi;160,2934
+  uint ebp;161,2946
+  uint oesp;162,2958
+  uint ebx;163,2997
+  uint edx;164,3009
+  uint ecx;165,3021
+  uint eax;166,3033
+  ushort gs;169,3070
+  ushort padding1;170,3083
+  ushort fs;171,3102
+  ushort padding2;172,3115
+  ushort es;173,3134
+  ushort padding3;174,3147
+  ushort ds;175,3166
+  ushort padding4;176,3179
+  uint trapno;177,3198
+  uint err;180,3254
+  uint eip;181,3266
+  ushort cs;182,3278
+  ushort padding5;183,3291
+  uint eflags;184,3310
+  uint esp;187,3396
+  ushort ss;188,3408
+  ushort padding6;189,3421
+
+usys.S,0
