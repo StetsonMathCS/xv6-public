@@ -260,7 +260,26 @@ wait(void)
 //  - choose a process to run
 //  - swtch to start running that process
 //  - eventually that process transfers control
-//      via swtch back to the scheduler.
+//      via swtch back to the scheduler
+
+int sched_type = ROUND_ROBIN;
+
+void switch_scheduler(int new_sched_type) {
+    // check for a valid scheduler type
+    if(new_sched_type == ROUND_ROBIN) {
+        sched_type = new_sched_type;
+    }
+}
+
+int sys_switch_scheduler(void)
+{
+    int new_sched_type;
+    if(argint(0, &new_sched_type) < 0)
+      return -1;
+    switch_scheduler(new_sched_type);
+    return 0;
+}
+
 void
 scheduler(void)
 {
@@ -272,23 +291,30 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
-        continue;
-
-      // Switch to chosen process.  It is the process's job
-      // to release ptable.lock and then reacquire it
-      // before jumping back to us.
-      proc = p;
-      switchuvm(p);
-      p->state = RUNNING;
-      swtch(&cpu->scheduler, proc->context);
-      switchkvm();
-
-      // Process is done running for now.
-      // It should have changed its p->state before coming back.
-      proc = 0;
+    if(sched_type == ROUND_ROBIN) {
+        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+            if(p->state == RUNNABLE)
+                break;
+        }
     }
+
+    // Now, p should be set to the process that we will switch to;
+    // or, if no such process was found, p will be bogus and ignored
+    if(p >= ptable.proc && p < &ptable.proc[NPROC]) {
+        // Switch to chosen process.  It is the process's job
+        // to release ptable.lock and then reacquire it
+        // before jumping back to us.
+        proc = p;
+        switchuvm(p);
+        p->state = RUNNING;
+        swtch(&cpu->scheduler, proc->context);
+        switchkvm();
+
+        // Process is done running for now.
+        // It should have changed its p->state before coming back.
+        proc = 0;
+    }
+
     release(&ptable.lock);
 
   }

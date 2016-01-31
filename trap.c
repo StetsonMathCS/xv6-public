@@ -39,9 +39,42 @@ trap_exit()
   sti();
   exit();
 }
+
+int capturing = 0;
+struct capture_stats cs;
+
+void start_capture(void)
+{
+    cs.tick_count = 0;
+    capturing = 1;
+}
+
+void stop_capture(struct capture_stats* p)
+{
+    capturing = 0;
+    p->tick_count = cs.tick_count;
+}
+
+int sys_start_capture(void)
+{
+    start_capture();
+    return 0;
+}
+
+int sys_stop_capture(void)
+{
+    struct capture_stats *p;
+    if(argptr(0, (void*)&p, sizeof(*p)) < 0)
+        return -1;
+    stop_capture(p);
+    return 0;
+}
+
 void
 trap(struct trapframe *tf)
 {
+  if(capturing)
+    cs.tick_count++;
   if(tf->trapno == T_SYSCALL){
     if(proc->killed)
       exit();

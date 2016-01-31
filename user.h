@@ -23,6 +23,9 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+void start_capture(void);
+void stop_capture(struct capture_stats*);
+void switch_scheduler(int);
 
 // ulib.c
 int stat(char*, struct stat*);
