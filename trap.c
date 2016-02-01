@@ -11,7 +11,10 @@
 static struct gatedesc idt[256];
 extern uint vectors[];  // in vectors.S: array of 256 entry pointers
 struct spinlock tickslock;
+
 uint ticks;
+int capturing = 0;
+struct capture_stats cs;
 
 void
 tvinit(void)
@@ -40,12 +43,11 @@ trap_exit()
   exit();
 }
 
-int capturing = 0;
-struct capture_stats cs;
-
 void start_capture(void)
 {
     cs.tick_count = 0;
+    cs.proc_exit_count = 0;
+    cs.proc_tick_count = 0;
     capturing = 1;
 }
 
@@ -53,6 +55,8 @@ void stop_capture(struct capture_stats* p)
 {
     capturing = 0;
     p->tick_count = cs.tick_count;
+    p->proc_exit_count = cs.proc_exit_count;
+    p->proc_tick_count = cs.proc_tick_count;
 }
 
 int sys_start_capture(void)

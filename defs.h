@@ -10,6 +10,12 @@ struct stat;
 struct superblock;
 struct ioapic;
 
+// defined in trap.c
+extern uint ticks;
+extern int capturing;
+extern struct capture_stats cs;
+
+
 // bio.c
 void            binit(void);
 struct buf*     bread(uint, uint);

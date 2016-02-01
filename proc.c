@@ -68,6 +68,7 @@ found:
   p->context = (struct context*)sp;
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
+  p->tickstart = ticks;
 
   return p;
 }
@@ -206,6 +207,10 @@ exit(void)
 
   // Jump into the scheduler, never to return.
   proc->state = ZOMBIE;
+  if(capturing) {
+      cs.proc_exit_count++;
+      cs.proc_tick_count += (ticks - proc->tickstart);
+  }
   sched();
   panic("zombie exit");
 }
