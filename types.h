@@ -9,5 +9,5 @@ struct capture_stats {
     int proc_tick_count;
 };
 
-enum scheduler_types { ROUND_ROBIN };
+enum scheduler_types { SCHED_ROUND_ROBIN, SCHED_FIFO };
 

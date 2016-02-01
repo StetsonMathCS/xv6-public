@@ -267,11 +267,11 @@ wait(void)
 //  - eventually that process transfers control
 //      via swtch back to the scheduler
 
-int sched_type = ROUND_ROBIN;
+int sched_type = SCHED_ROUND_ROBIN;
 
 void switch_scheduler(int new_sched_type) {
     // check for a valid scheduler type
-    if(new_sched_type == ROUND_ROBIN) {
+    if(new_sched_type == SCHED_ROUND_ROBIN) {
         sched_type = new_sched_type;
     }
 }
@@ -296,7 +296,7 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
-    if(sched_type == ROUND_ROBIN) {
+    if(sched_type == SCHED_ROUND_ROBIN) {
         for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
             if(p->state == RUNNABLE)
                 break;

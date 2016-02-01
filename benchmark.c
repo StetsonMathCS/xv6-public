@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     printf(1, "sched,rep,ticks,procexits,procticks\n");
     int sched_type;
-    for(sched_type = ROUND_ROBIN; sched_type <= ROUND_ROBIN; sched_type++)
+    for(sched_type = SCHED_ROUND_ROBIN; sched_type <= SCHED_ROUND_ROBIN; sched_type++)
     {
         int pid;
         int rep;
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
             struct capture_stats cs;
             stop_capture(&cs);
             char *sched_name;
-            if(sched_type == ROUND_ROBIN)
+            if(sched_type == SCHED_ROUND_ROBIN)
                 sched_name = "rr";
             printf(1, "%s,%d,%d,%d,%d\n",
                     sched_name, rep, cs.tick_count,
