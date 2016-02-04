@@ -68,8 +68,6 @@ found:
   p->context = (struct context*)sp;
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
-  p->tickstart = ticks;
-
   return p;
 }
 
@@ -161,6 +159,9 @@ fork(void)
   // lock to force the compiler to emit the np->state write last.
   acquire(&ptable.lock);
   np->state = RUNNABLE;
+  //cprintf("pid %d tickstart %d\n", np->pid, ticks);
+  np->tickstart = ticks;
+  np->tickfirstrun = 0;
   release(&ptable.lock);
 
   return pid;
@@ -207,9 +208,10 @@ exit(void)
 
   // Jump into the scheduler, never to return.
   proc->state = ZOMBIE;
-  if(capturing) {
+  if(capturing && proc->tickfirstrun > 0) { // may still be 0 if not capturing when proc started
       cs.proc_exit_count++;
       cs.proc_tick_count += (ticks - proc->tickstart);
+      cs.proc_firstrun_count += (proc->tickfirstrun - proc->tickstart);
   }
   sched();
   panic("zombie exit");
@@ -271,7 +273,7 @@ int sched_type = SCHED_ROUND_ROBIN;
 
 void switch_scheduler(int new_sched_type) {
     // check for a valid scheduler type
-    if(new_sched_type == SCHED_ROUND_ROBIN) {
+    if(new_sched_type >= SCHED_ROUND_ROBIN && new_sched_type <= SCHED_MLFQ) {
         sched_type = new_sched_type;
     }
 }
@@ -285,21 +287,58 @@ int sys_switch_scheduler(void)
     return 0;
 }
 
+int lastprocidx = 0;
 void
 scheduler(void)
 {
   struct proc *p;
+  int idx;
 
   for(;;){
     // Enable interrupts on this processor.
     sti();
 
-    // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+    p = 0;
     if(sched_type == SCHED_ROUND_ROBIN) {
-        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-            if(p->state == RUNNABLE)
+        // round-robin is reimplemented because I changed the nesting of the
+        // outer infinite for() and the if's inside, to support different
+        // schedulers
+        idx = (lastprocidx + 1) % NPROC;
+        while(1) {
+            p = &ptable.proc[idx];
+            if(p->state == RUNNABLE) {
+                lastprocidx = idx;
                 break;
+            }
+            idx = (idx + 1) % NPROC;
+            if(idx == (lastprocidx+1)) { // ran out of procs to check, nothing runnable
+                p = 0;
+                break;
+            }
+        }
+    }
+    else if(sched_type == SCHED_FIFO) {
+        // TODO
+    }
+    else if(sched_type == SCHED_LIFO) {
+        // TODO
+    }
+    else if(sched_type == SCHED_MLFQ) {
+        // - rule 1: if priority(a) > priority(b), a runs (on different queues)
+        // - rule 2: if priority(a) = priority(b), a and b run in round robin (on same queue)
+        // - rule 3: when job is created, has highest priority
+        // - rule 4: when a job uses up its time allotment, its priority is reduced by 1
+        // - rule 5: after some fixed time period, all jobs move to highest priority
+        //
+        //
+        // TODO
+    }
+
+    // if schedulers are broken and p == 0, try again to find a proc
+    if(p == 0) {
+        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+            if(p->state == RUNNABLE) break;
         }
     }
 
@@ -310,8 +349,11 @@ scheduler(void)
         // to release ptable.lock and then reacquire it
         // before jumping back to us.
         proc = p;
+        //cprintf("switching to %d\n", proc->pid);
         switchuvm(p);
         p->state = RUNNING;
+        if(capturing && p->tickfirstrun == 0)
+            p->tickfirstrun = ticks;
         swtch(&cpu->scheduler, proc->context);
         switchkvm();
 

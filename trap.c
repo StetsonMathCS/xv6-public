@@ -26,6 +26,8 @@ tvinit(void)
   SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
 
   initlock(&tickslock, "time");
+
+  ticks = 0;
 }
 
 void
@@ -48,6 +50,7 @@ void start_capture(void)
     cs.tick_count = 0;
     cs.proc_exit_count = 0;
     cs.proc_tick_count = 0;
+    cs.proc_firstrun_count = 0;
     capturing = 1;
 }
 
@@ -57,6 +60,7 @@ void stop_capture(struct capture_stats* p)
     p->tick_count = cs.tick_count;
     p->proc_exit_count = cs.proc_exit_count;
     p->proc_tick_count = cs.proc_tick_count;
+    p->proc_firstrun_count = cs.proc_firstrun_count;
 }
 
 int sys_start_capture(void)
@@ -77,8 +81,6 @@ int sys_stop_capture(void)
 void
 trap(struct trapframe *tf)
 {
-  if(capturing)
-    cs.tick_count++;
   if(tf->trapno == T_SYSCALL){
     if(proc->killed)
       exit();
@@ -93,6 +95,8 @@ trap(struct trapframe *tf)
   case T_IRQ0 + IRQ_TIMER:
     if(cpu->id == 0){
       acquire(&tickslock);
+      if(capturing)
+          cs.tick_count++;
       ticks++;
       wakeup(&ticks);
       release(&tickslock);

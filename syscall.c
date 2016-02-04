@@ -125,6 +125,7 @@ static int (*syscalls[])(void) = {
   [SYS_close]  = sys_close,
   [SYS_start_capture] = sys_start_capture,
   [SYS_stop_capture] = sys_stop_capture,
+  [SYS_switch_scheduler] = sys_switch_scheduler,
 };
 
 void

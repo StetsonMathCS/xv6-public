@@ -7,7 +7,8 @@ struct capture_stats {
     int tick_count;
     int proc_exit_count;
     int proc_tick_count;
+    int proc_firstrun_count;
 };
 
-enum scheduler_types { SCHED_ROUND_ROBIN, SCHED_FIFO };
+enum scheduler_types { SCHED_ROUND_ROBIN, SCHED_FIFO, SCHED_LIFO, SCHED_MLFQ };
 
