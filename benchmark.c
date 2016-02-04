@@ -11,7 +11,7 @@ void workload(int i)
         //printf(1, "io pid = %d\n", getpid());
         char buf[8192];
         int j;
-        for(j = 0; j < 1000; j++)
+        for(j = 0; j < 100; j++)
         {
             int fd = open("benchmark", O_RDONLY);
             read(fd, buf, 2000);
@@ -67,6 +67,25 @@ void workload(int i)
             close(fd);
         }
     }
+    else if(i == 4)
+    {
+        //printf(1, "add and io pid = %d\n", getpid());
+        double r;
+        int j;
+        char buf[8192];
+        for(j = 0; j < 30; j++)
+        {
+            int fd = open("benchmark", O_RDONLY);
+            int i;
+            r = 1.0;
+            for(i = 0; i < 100; i++)
+            {
+                r = r + r * i;
+            }
+            read(fd, buf, 2000);
+            close(fd);
+        }
+    }
 }
 
 int main(int argc, char *argv[])
@@ -87,7 +106,7 @@ int main(int argc, char *argv[])
                 pid = fork();
                 if(pid == 0)
                 {
-                    workload((rep + forki) % 4);
+                    workload((rep + forki) % 5);
                     exit();
                 }
                 sleep(5);
