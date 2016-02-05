@@ -26,7 +26,7 @@ test.benchmarks <- function() {
   checkTrue(check_sig(d, "ticks", "rr", "fifo", 0.01), "Checking that rr and fifo have statistically significantly different total tick counts")
   checkTrue(check_mean_diff(d, "ticks", "fifo", "rr", 100), "Checking that fifo has on average >100 more total ticks than rr")
   checkTrue(check_sig(d, "ticks", "rr", "mlfq", 0.01), "Checking that rr and mlfq have statistically significantly different total tick counts")
-  checkTrue(check_mean_diff(d, "ticks", "mlfq", "rr", 50), "Checking that fifo has on average >50 more total ticks than rr")
+  checkTrue(check_mean_diff(d, "ticks", "mlfq", "rr", 50), "Checking that mlfq has on average >50 more total ticks than rr")
 
   # procticks
   for(sched in c("rr", "fifo", "mlfq")) {
