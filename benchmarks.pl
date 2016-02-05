@@ -14,7 +14,7 @@ sub stop_script {
 
 sleep(10);
 
-$exp->send("benchmark\n");
+$exp->send("\n\nbenchmark\n");
 
 sleep(5);
 
