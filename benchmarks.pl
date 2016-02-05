@@ -3,10 +3,16 @@
 use strict;
 use Expect;
 
-
 my $exp = Expect->spawn("make qemu-nox") or die "\n\nCannot start qemu with 'make qemu-nox'";
 
-sleep(5);
+use sigtrap qw(handler stop_script INT QUIT);
+
+sub stop_script {
+    $exp->hard_close();
+    die;
+}
+
+sleep(10);
 
 $exp->send("benchmark\n");
 
