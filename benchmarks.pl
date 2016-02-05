@@ -21,6 +21,7 @@ sleep(5);
 $exp->expect(100000, '-re', '(?s:\$\s*sched,rep,ticks,procexits,procticks,procfirstrun\s*(.*)\$)');
 
 open(CSV, ">sched-benchmarks.csv");
+print CSV "sched,rep,ticks,procexits,procticks,procfirstrun\n";
 print CSV ($exp->matchlist)[0];
 close(CSV);
 
