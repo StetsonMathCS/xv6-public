@@ -18,7 +18,7 @@ $exp->send("\n\nbenchmark\n");
 
 sleep(5);
 
-$exp->expect(100000, '-re', '(?s:\$\s*benchmark\s*(.*)\$)');
+$exp->expect(100000, '-re', '(?s:\$\s*sched,rep,ticks,procexits,procticks,procfirstrun\s*(.*)\$)');
 
 open(CSV, ">sched-benchmarks.csv");
 print CSV ($exp->matchlist)[0];
