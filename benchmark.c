@@ -4,11 +4,15 @@
 #include "fs.h"
 #include "fcntl.h"
 
+#define DEBUG 0
+
 void workload(int i)
 {
     if(i == 0)
     {
-        //printf(1, "io pid = %d\n", getpid());
+#if DEBUG
+        printf(1, "short io pid = %d\n", getpid());
+#endif
         char buf[8192];
         int j;
         for(j = 0; j < 100; j++)
@@ -20,7 +24,9 @@ void workload(int i)
     }
     else if(i == 1)
     {
-        //printf(1, "add pid = %d\n", getpid());
+#if DEBUG
+        printf(1, "add pid = %d\n", getpid());
+#endif
         double r;
         int j;
         for(j = 0; j < 10000; j++)
@@ -35,10 +41,12 @@ void workload(int i)
     }
     else if(i == 2)
     {
-        //printf(1, "mult pid = %d\n", getpid());
+#if DEBUG
+        printf(1, "mult pid = %d\n", getpid());
+#endif
         double r;
         int j;
-        for(j = 0; j < 10000; j++)
+        for(j = 0; j < 20000; j++)
         {
             int i;
             r = 1.0;
@@ -50,11 +58,13 @@ void workload(int i)
     }
     else if(i == 3)
     {
-        //printf(1, "add and io pid = %d\n", getpid());
+#if DEBUG
+        printf(1, "add and io pid = %d\n", getpid());
+#endif
         double r;
         int j;
         char buf[8192];
-        for(j = 0; j < 300; j++)
+        for(j = 0; j < 1000; j++)
         {
             int fd = open("benchmark", O_RDONLY);
             int i;
@@ -69,21 +79,39 @@ void workload(int i)
     }
     else if(i == 4)
     {
-        //printf(1, "add and io pid = %d\n", getpid());
+#if DEBUG
+        printf(1, "add and io pid = %d\n", getpid());
+#endif
         double r;
         int j;
         char buf[8192];
-        for(j = 0; j < 30; j++)
+        for(j = 0; j < 1000; j++)
         {
             int fd = open("benchmark", O_RDONLY);
             int i;
             r = 1.0;
-            for(i = 0; i < 100; i++)
+            for(i = 0; i < 50; i++)
             {
                 r = r + r * i;
             }
             read(fd, buf, 2000);
             close(fd);
+        }
+    }
+    else if(i == 5)
+    {
+#if DEBUG
+        printf(1, "sleeper pid = %d\n", getpid());
+#endif
+        int i, j;
+        double r;
+        for(i = 0; i < 100; i++) {
+            r = 1.0;
+            for(j = 0; j < 100; j++)
+            {
+                r = r + r * j;
+            }
+            sleep(10);
         }
     }
 }
@@ -97,16 +125,16 @@ int main(int argc, char *argv[])
         switch_scheduler(sched_type);
         int pid;
         int rep;
-        for(rep = 1; rep <= 50; rep++)
+        for(rep = 1; rep <= 30; rep++)
         {
             start_capture();
 
             int forki;
-            for(forki = 0; forki < 30; forki++) {
+            for(forki = 0; forki < 10; forki++) {
                 pid = fork();
                 if(pid == 0)
                 {
-                    workload((rep + forki) % 5);
+                    workload((rep + forki) % 6);
                     exit();
                 }
                 sleep(5);
