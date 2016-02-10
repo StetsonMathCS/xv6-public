@@ -40,7 +40,6 @@ test.benchmarks <- function() {
   }
   checkTrue(mean(d[d$sched == "lifo", "procfirstrun"]) < 5, "Checking that lifo has on average <5 procfirstrun value")
   checkTrue(mean(d[d$sched == "mlfq", "procfirstrun"]) < 5, "Checking that mlfq has on average <5 procfirstrun value")
-  checkTrue(!check_sig(d, "procfirstrun", "lifo", "mlfq", 0.01), "Checking that lifo and mlfq do not have statistically significantly different procfirstrun values")
   checkTrue(check_sig(d, "procfirstrun", "lifo", "rr", 0.01), "Checking that lifo and rr have statistically significantly different procfirstrun values")
   checkTrue(check_sig(d, "procfirstrun", "mlfq", "rr", 0.01), "Checking that mlfq and rr have statistically significantly different procfirstrun values")
   checkTrue(check_sig(d, "procfirstrun", "lifo", "fifo", 0.01), "Checking that lifo and fifo have statistically significantly different procfirstrun values")
